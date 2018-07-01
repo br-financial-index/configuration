@@ -1,0 +1,17 @@
+server:
+  port: 8765
+
+eureka:
+  client:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+
+zuul:
+  routes:
+    employee-search-service:
+      serviceId: employee-search-service
+    employee-dashboard-service:
+      serviceId: employee-dashboard-service
+  host:
+    socket-timeout-millis: 30000
