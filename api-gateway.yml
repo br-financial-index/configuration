@@ -2,16 +2,16 @@ server:
   port: 8765
 
 eureka:
-  client:
   instance:
-    hostname: localhost
     preferIpAddress: true
 
 zuul:
   routes:
     employee-search-service:
+      path: /employees/**
       serviceId: employee-search-service
     employee-dashboard-service:
+      path: /dashboards/**
       serviceId: employee-dashboard-service
   host:
-    socket-timeout-millis: 30000
+    socket-timeout-millis: 5000
