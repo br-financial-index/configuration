@@ -3,6 +3,15 @@ server:
 
 eureka:
   client:
+    fetchRegistry: true
   instance:
-    hostname: localhost
     preferIpAddress: true
+
+feign:
+  hystrix:
+    enabled: true
+
+employee-search-service:
+  ribbon:
+    eureka:
+      enabled: true
